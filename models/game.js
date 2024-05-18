@@ -27,7 +27,6 @@ const gameSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: userModel,
   }],
-  // Добавляем поле для списка категорий
   categories: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: categoryModel,
