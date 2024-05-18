@@ -2,10 +2,8 @@ const express = require("express");
 const path = require("path");
 const bodyParser =  require("body-parser");
 
-const gamesRouter = require("./routes/games");
-const categoriesRouter = require("./routes/categories");
-const usersRouter = require("./routes/users");
 const connectToDatabase = require('./database/connect');
+const apiRouter = require("./routes/apiRouter");
 
 const PORT = 3000;
 
@@ -16,9 +14,7 @@ connectToDatabase();
 app.use(
     bodyParser.json(),
     express.static(path.join(__dirname, "public")),
-    usersRouter,
-    gamesRouter,
-    categoriesRouter
+    apiRouter
 );
 
 app.listen(PORT, () => {
